@@ -1,0 +1,6 @@
+numpy==1.24.3
+nltk==3.8.1
+tensorflow==2.13.0
+Flask==2.0.1
+langid==1.1.6
+googletrans==3.0.0
