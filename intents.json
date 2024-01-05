@@ -1,0 +1,119 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["Hi", "Hello", "Hey", "Greetings"],
+      "responses": ["Hello! How can I assist you today?", "Hi there! What can I help you with?"]
+    },
+    {
+      "tag": "general_query",
+      "patterns": ["Tell me something interesting", "What's new?", "Share a fun fact"],
+      "responses": ["Sure! Did you know that honey never spoils? Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible."]
+    },
+    {
+      "tag": "help",
+      "patterns": ["Can you help me?", "I need assistance", "Help"],
+      "responses": ["Of course! I'm here to help. What do you need assistance with?"]
+    },
+    {
+      "tag": "weather",
+      "patterns": ["What's the weather like today?", "Tell me the current weather", "Weather forecast"],
+      "responses": ["I'm afraid I don't have real-time weather information. You can check a reliable weather website or use a weather app for the most up-to-date forecast."]
+    },
+    {
+      "tag": "joke",
+      "patterns": ["Tell me a joke", "Make me laugh", "Joke time"],
+      "responses": ["Sure, here's one for you: Why don't scientists trust atoms? Because they make up everything!"]
+    },
+    {
+      "tag": "quote",
+      "patterns": ["Give me a quote", "Share an inspiring quote", "Quote of the day"],
+      "responses": ["Here's a quote to inspire you: 'The only way to do great work is to love what you do.' - Steve Jobs"]
+    },
+    {
+      "tag": "tech_news",
+      "patterns": ["Tell me the latest tech news", "What's happening in the tech world?", "Tech news update"],
+      "responses": ["I don't have real-time news updates. However, you can visit reputable tech news websites or follow them on social media for the latest updates."]
+    },
+    {
+      "tag": "book_recommendation",
+      "patterns": ["Recommend a good book", "Suggest a book to read", "Book recommendation"],
+      "responses": ["Certainly! How about trying 'The Hitchhiker's Guide to the Galaxy' by Douglas Adams? It's a classic with a blend of humor and science fiction."]
+    },
+    {
+      "tag": "movie_recommendation",
+      "patterns": ["Recommend a movie", "What movie should I watch?", "Movie suggestion"],
+      "responses": ["If you enjoy suspense, I recommend watching 'Inception.' It's a mind-bending thriller directed by Christopher Nolan."]
+    },
+    {
+      "tag": "recipe",
+      "patterns": ["Share a recipe", "Recipe ideas", "Cooking inspiration"],
+      "responses": ["How about trying a simple pasta recipe? Cook your favorite pasta, toss it with olive oil, garlic, cherry tomatoes, and basil. Top it with grated Parmesan cheese."]
+    },
+    {
+      "tag": "fitness_tip",
+      "patterns": ["Give me a fitness tip", "Fitness advice", "Health tip"],
+      "responses": ["A quick fitness tip: Incorporate short bursts of high-intensity exercises into your routine for an effective and time-efficient workout."]
+    },
+    {
+      "tag": "travel_destination",
+      "patterns": ["Recommend a travel destination", "Best vacation spots", "Where should I travel next?"],
+      "responses": ["How about exploring the beautiful landscapes of New Zealand? From stunning fjords to vibrant cities, it offers a diverse and unforgettable experience."]
+    },
+    {
+      "tag": "coding_help",
+      "patterns": ["I need coding help", "Help with programming", "Coding assistance"],
+      "responses": ["Sure, I'd be happy to help with coding! What specific programming issue or language are you working with?"]
+    },
+    {
+      "tag": "language_learning",
+      "patterns": ["How can I learn a new language?", "Language learning tips", "Best way to learn a language"],
+      "responses": ["Learning a new language? Consistent practice, using language-learning apps, and immersing yourself in conversations are effective strategies. What language are you interested in learning?"]
+    },
+    {
+      "tag": "movie_review",
+      "patterns": ["What's your favorite movie?", "Give a movie review", "Top movies"],
+      "responses": ["I don't watch movies, but I can help you find popular and highly-rated films. What genre or theme are you interested in?"]
+    },
+    {
+      "tag": "pet_advice",
+      "patterns": ["Give me pet advice", "Pet care tips", "Advice for pet owners"],
+      "responses": ["For happy pets, ensure they have a balanced diet, regular exercise, and lots of love! If you have specific questions about your pet, feel free to ask."]
+    },
+    {
+      "tag": "music_recommendation",
+      "patterns": ["Recommend some music", "What music should I listen to?", "Music suggestion"],
+      "responses": ["How about exploring the genre of indie rock? Bands like Arctic Monkeys and Tame Impala offer a unique and enjoyable musical experience."]
+    },
+    {
+      "tag": "coding_joke",
+      "patterns": ["Tell me a coding joke", "Programming humor", "Code joke"],
+      "responses": ["Why do programmers prefer dark mode? Because light attracts bugs!"]
+    },
+    {
+      "tag": "life_advice",
+      "patterns": ["Give me life advice", "Life tips", "Advice for a happy life"],
+      "responses": ["One piece of life advice: Embrace challenges as opportunities for growth. Learning and adapting make the journey more fulfilling."]
+    },
+    {
+      "tag": "relationship_advice",
+      "patterns": ["Relationship advice", "Help with relationships", "Love advice"],
+      "responses": ["In relationships, communication and understanding are key. Take time to listen to each other and express your feelings openly."]
+    },
+    {
+      "tag": "self_care",
+      "patterns": ["Self-care tips", "How to practice self-care", "Taking care of myself"],
+      "responses": ["Self-care is crucial. Allocate time for activities you enjoy, practice mindfulness, and ensure you prioritize your mental and physical well-being."]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thank you", "Thanks", "Appreciate your help"],
+      "responses": ["You're welcome! If you have more questions or need assistance, feel free to ask."]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Goodbye", "Farewell", "See you later"],
+      "responses": ["Goodbye! If you ever want to chat or need assistance in the future, don't hesitate to reach out. Take care!"]
+    }
+  ]
+}
