@@ -1,3 +1,4 @@
+from flask import Flask, render_template, request, jsonify
 import random
 import json
 import pickle
@@ -9,6 +10,8 @@ import nltk
 from nltk.stem import WordNetLemmatizer
 
 from tensorflow.keras.models import load_model
+
+app = Flask(__name__)
 
 lemmatizer = WordNetLemmatizer()
 intents = json.loads(open('intents.json').read())
@@ -31,7 +34,6 @@ def clean_up_sentence(sentence, language):
     sentence_words = [lemmatizer.lemmatize(word) for word in sentence_words]
 
     if language != 'en':
-        # Translate words to English for processing
         sentence_words = [translate_text(word, 'en') for word in sentence_words]
 
     return sentence_words
@@ -64,48 +66,30 @@ def get_response(intents_list, intents_json, language):
         if i['tag'] == tag:
             response = random.choice(i['responses'])
             if language != 'en':
-                # Translate response to the detected language
                 response = translate_text(response, language)
             return response
 
-def ask_for_language():
-    print("Select your preferred language:")
-    print("1. English")
-    print("2. Hindi")
-    print("3. Spanish")
+@app.route('/')
+def home():
+    return render_template('index.html')
 
-    while True:
-        choice = input("Enter the number corresponding to your choice: ")
-        if choice == '1':
-            return 'en'
-        elif choice == '2':
-            return 'hi'
-        elif choice == '3':
-            return 'es'
-        else:
-            print("Invalid choice. Please enter a valid number.")
-
-print("BOT IS RUNNING")
-
-selected_language = ask_for_language()
-
-while True:
-    message = input("You: ")
+@app.route('/ask', methods=['POST'])
+def ask():
+    message = request.form['message']
     language = detect_language(message)
 
-    print(f"Detected language: {language}")
-
     if language != selected_language:
-
         message = translate_text(message, selected_language)
 
     ints = predict_class(message, language)
-    print(f"Model predictions: {ints}")
-
     res = get_response(ints, intents, language)
 
     if language != selected_language:
-
         res = translate_text(res, language)
 
-    print("Bot:", res)
+    return jsonify({'message': res})
+
+if __name__ == '__main__':
+    print("BOT IS RUNNING")
+    selected_language = 'en'  # Default language, you can set it to your preferred default
+    app.run(debug=True)

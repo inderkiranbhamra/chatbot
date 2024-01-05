@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+</head>
+<body>
+    <div>
+        <h1>Chatbot</h1>
+
+        <label for="language-select">Select your preferred language:</label>
+        <select id="language-select">
+            <option value="en">English</option>
+            <option value="hi">Hindi</option>
+            <option value="es">Spanish</option>
+        </select>
+
+        <div id="chat-container">
+            <div id="chat"></div>
+            <input type="text" id="message-input" placeholder="Type your message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        function sendMessage() {
+            var messageInput = document.getElementById("message-input");
+            var message = messageInput.value;
+            messageInput.value = "";
+
+            var languageSelect = document.getElementById("language-select");
+            var language = languageSelect.value;
+
+            var chatDiv = document.getElementById("chat");
+            var userMessage = document.createElement("div");
+            userMessage.className = "user-message";
+            userMessage.innerHTML = "<strong>You:</strong> " + message;
+            chatDiv.appendChild(userMessage);
+
+            // Send the message and language to the server
+            fetch('/ask', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'message=' + encodeURIComponent(message) + '&language=' + encodeURIComponent(language),
+            })
+            .then(response => response.json())
+            .then(data => {
+                var botMessage = document.createElement("div");
+                botMessage.className = "bot-message";
+                botMessage.innerHTML = "<strong>Bot:</strong> " + data.message;
+                chatDiv.appendChild(botMessage);
+            });
+        }
+    </script>
+</body>
+</html>
